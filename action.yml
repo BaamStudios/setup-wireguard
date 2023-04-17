@@ -157,7 +157,7 @@ runs:
                 allowed-ips "$allowed_ips" \
                 ${additional_wg_args[@]+"${additional_wg_args[@]}"}
 
-            sudo ip link set mtu 1420 up dev "$ifname"
+            sudo ip link set mtu 1280 up dev "$ifname"
 
             # Add routes for allowed_ips
             for i in ${allowed_ips//,/ }; do sudo ip route replace "$i" dev "$ifname"; done
